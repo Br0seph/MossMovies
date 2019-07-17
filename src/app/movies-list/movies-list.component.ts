@@ -13,11 +13,14 @@ export class MoviesListComponent implements OnInit {
   constructor(private logicService: LogicService) { }
 
   $movies: Observable<Movie[]>;
+  searchText: string;
 
   ngOnInit() {
-    this.logicService.getAllMovies().subscribe(data => {
-      debugger;
-      this.$movies = data;
+  }
+
+  searchMovies() {
+    this.logicService.search(this.searchText).subscribe((response) => {
+      this.$movies = response.results;
     });
   }
 

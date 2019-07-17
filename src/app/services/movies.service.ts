@@ -9,15 +9,18 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class MoviesService {
 
+    apiKey = '?api_key=82d8fc5e5d0be14a733eaeb4c28e23ce';
+    baseRoute = 'https://api.themoviedb.org/';
+
     constructor(private http: HttpClient) {
+
     }
 
     // example req: https://api.themoviedb.org/3/movie/550?api_key=82d8fc5e5d0be14a733eaeb4c28e23ce
-    getMovies(): Observable<any> {
-        const apiKey = '?api_key=82d8fc5e5d0be14a733eaeb4c28e23ce';
-        const baseRoute = 'https://api.themoviedb.org/';
-
-        const route = baseRoute + '3/movie/550' + apiKey;
+    // https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher
+    searchMovies(searchTerm: string): Observable<any> {
+        const route = this.baseRoute + '3/search/movie' + this.apiKey + '&query=' + encodeURI(searchTerm);
+        debugger;
 
         return this.http.get<any>(route)
             .pipe(

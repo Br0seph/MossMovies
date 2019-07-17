@@ -1,7 +1,16 @@
-<p>
-  movies-list works!
-</p>
+<!-- TODO: Movie into a search bar -->
+<form>
+  <input type="text" name="search" [(ngModel)]="searchText">
 
-<div *ngFor="let movie of $movies">
-  {{movie.title}}
+  <button type="button" (click)="searchMovies()">
+    Search
+  </button>
+</form>
+
+<!-- TODO: Should add a "no results returned" message if nothing comes back -->
+<div *ngIf="$movies">
+  <div *ngFor="let movie of $movies">
+    <app-movie-list-tile [movie]="movie"></app-movie-list-tile>
+  </div>
 </div>
+

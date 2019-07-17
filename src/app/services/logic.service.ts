@@ -12,12 +12,25 @@ export class LogicService {
     constructor(private moviesService: MoviesService) {
     }
 
-    // Returns all movies
-    getAllMovies(): Observable<any> {
-        return this.moviesService.getMovies().pipe(
+    // Search for movies.
+    search(searchTerm: string): Observable<any> {
+        searchTerm = this.hughBeGone(searchTerm);
+
+        return this.moviesService.searchMovies(searchTerm).pipe(
             map(response => {
                 return response;
             })
         );
+    }
+
+    // Dude has no place in movies.
+    hughBeGone(searchTerm: string): string {
+        const hughCheck = searchTerm.toLocaleLowerCase();
+
+        if (hughCheck.includes('hugh') && hughCheck.includes('grant')) {
+            searchTerm = 'Mulan'; // thank me later => *spoilers*.... she saves China
+        }
+
+        return searchTerm;
     }
 }
