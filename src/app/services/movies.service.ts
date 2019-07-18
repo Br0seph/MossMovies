@@ -31,6 +31,21 @@ export class MoviesService {
             );
     }
 
+    // example req: https://api.themoviedb.org/3/movie/now_playing?api_key=82d8fc5e5d0be14a733eaeb4c28e23ce&language=en-US&page=1
+    getCurrentMovies(): Observable<any> {
+        const route = this.baseRoute + '3/movie/now_playing' + this.apiKey;
+
+        return this.http.get<any>(route)
+            .pipe(
+                map(response => {
+                    return response;
+                }),
+                catchError(error => {
+                    throw Error('Err: ' + error);
+                })
+            );
+    }
+
     // example req: https://api.themoviedb.org/3/movie/550?api_key=82d8fc5e5d0be14a733eaeb4c28e23ce
     getMovie(id: string) {
         const route = this.baseRoute + '3/movie/' + id + this.apiKey;

@@ -32,7 +32,9 @@ export class MoviesListComponent implements OnInit {
   }
 
   getCurrentMovies() {
-    return true;
+    this.logicService.getCurrentMovies().subscribe((response) => {
+      this.$movies = response.results;
+    });
   }
 
   clearSearch() {

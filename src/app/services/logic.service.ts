@@ -23,6 +23,14 @@ export class LogicService {
         );
     }
 
+    getCurrentMovies(): Observable<any> {
+        return this.moviesService.getCurrentMovies().pipe(
+            map(response => {
+                return response;
+            })
+        );
+    }
+
     // Dude has no place in movies.
     hughBeGone(searchTerm: string): string {
         const hughCheck = searchTerm.toLocaleLowerCase();
