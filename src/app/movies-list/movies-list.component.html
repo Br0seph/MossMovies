@@ -8,9 +8,8 @@
 </form>
 
 <!-- TODO: Should add a "no results returned" message if nothing comes back -->
-<div *ngIf="$movies">
-  <div *ngFor="let movie of $movies">
-    <app-movie-list-tile [movie]="movie"></app-movie-list-tile>
-  </div>
-</div>
-
+<ng-container *ngIf="$movies">
+    <ng-container *ngFor="let movie of $movies">
+        <app-movie-list-tile [movie]="movie"></app-movie-list-tile>
+    </ng-container>
+</ng-container>

@@ -1,4 +1,18 @@
-<div>
-  <p>{{movie.title}}</p>
-  <button>Detail</button>
-</div>
+<mat-card class="movie-card">
+  <mat-card-header>
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-title>{{movie.title}}</mat-card-title>
+  </mat-card-header>
+
+  <img mat-card-image src="http://image.tmdb.org/t/p/w185//{{movie.poster_path}}" alt="Movie icon">
+
+  <mat-card-content>
+    <p>
+      {{movieBrief(movie.overview)}}
+    </p>
+  </mat-card-content>
+  <!-- <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions> -->
+</mat-card>

@@ -3,4 +3,5 @@ export class Movie {
     id: BigInteger;
     title: string;
     overview: string;
+    poster_path: string;
 }
