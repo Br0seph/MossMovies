@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 import { MovieListTileComponent } from './movie-list-tile/movie-list-tile.component';
 import { AppMaterialModule } from './app.material.module';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesListComponent,
-    MovieListTileComponent
+    MovieListTileComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,

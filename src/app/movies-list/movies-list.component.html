@@ -15,6 +15,7 @@
   <!-- I know this is an odd implementation of "current movies" but... time. -->
   <ng-container *ngIf="!$movies && hasSearched">
     <div>
+      <p>No results returned, why don't you check out...</p>
       <button mat-raised-button type="button" (click)="getCurrentMovies()">
         See Current Movies
       </button>
@@ -22,7 +23,6 @@
   </ng-container>
 </div>
 
-<!-- TODO: Should add a "no results returned" message if nothing comes back -->
 <ng-container *ngIf="$movies">
   <ng-container *ngFor="let movie of $movies">
     <app-movie-list-tile [movie]="movie"></app-movie-list-tile>
