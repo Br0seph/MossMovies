@@ -1,7 +1,7 @@
 <!-- TODO: Movie into a search bar -->
 <div class="search-container">
   <mat-form-field class="search-form">
-    <input class="search-bar" matInput type="text" placeholder="e.g. Mulan" [(ngModel)]="searchText">
+    <input class="search-bar" matInput type="text" placeholder="e.g. Mulan" [(ngModel)]="searchText" (keyup.enter)="searchMovies()">
     <button mat-button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="clearSearch()">
       <mat-icon>close</mat-icon>
     </button>
