@@ -1,13 +1,15 @@
 <!-- TODO: Movie into a search bar -->
-<div>
-  <mat-form-field>
-    <input matInput type="text" placeholder="Clearable input" [(ngModel)]="searchText">
+<div class="search-container">
+  <mat-form-field class="search-form">
+    <input class="search-bar" matInput type="text" placeholder="Clearable input" [(ngModel)]="searchText">
     <button mat-button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="searchText=''">
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
 
-  <button mat-button type="button" (click)="searchMovies()">Search</button>
+  <button mat-button type="button" (click)="searchMovies()">
+    <mat-icon>search</mat-icon>
+  </button>
 </div>
 
 <!-- TODO: Should add a "no results returned" message if nothing comes back -->
