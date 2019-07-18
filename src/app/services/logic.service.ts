@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
@@ -23,8 +22,18 @@ export class LogicService {
         );
     }
 
+    // Get movies currently in the theatre.
     getCurrentMovies(): Observable<any> {
         return this.moviesService.getCurrentMovies().pipe(
+            map(response => {
+                return response;
+            })
+        );
+    }
+
+    // Get an individual movie.
+    getMovie(id: string): Observable<any> {
+        return this.moviesService.getMovie(id).pipe(
             map(response => {
                 return response;
             })
