@@ -20,7 +20,6 @@ export class MoviesService {
     // https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher
     searchMovies(searchTerm: string): Observable<any> {
         const route = this.baseRoute + '3/search/movie' + this.apiKey + '&query=' + encodeURI(searchTerm);
-        debugger;
 
         return this.http.get<any>(route)
             .pipe(
