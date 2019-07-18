@@ -15,10 +15,14 @@ export class MovieListTileComponent implements OnInit {
   ngOnInit() {
   }
 
-  movieBrief(overview: string): string {
+  movieBrief(overview: string, maxLength: number): string {
 
-    if (overview.length > 100) {
-      return overview.substr(0, 100) + '...';
+    if (!maxLength) {
+      maxLength = 100;
+    }
+
+    if (overview.length > maxLength) {
+      return overview.substr(0, maxLength) + '...';
     }
 
     return overview;
