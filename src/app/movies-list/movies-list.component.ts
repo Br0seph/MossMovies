@@ -24,4 +24,8 @@ export class MoviesListComponent implements OnInit {
     });
   }
 
+  clearSearch() {
+    this.$movies = null;
+    this.searchText = null;
+  }
 }
