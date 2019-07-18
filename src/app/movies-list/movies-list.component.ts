@@ -19,6 +19,10 @@ export class MoviesListComponent implements OnInit {
   }
 
   searchMovies() {
+    if (!this.searchText) {
+      return;
+    }
+
     this.logicService.search(this.searchText).subscribe((response) => {
       this.$movies = response.results;
     });
