@@ -14,11 +14,14 @@ export class MoviesListComponent implements OnInit {
 
   $movies: Observable<Movie[]>;
   searchText: string;
+  hasSearched = false;
 
   ngOnInit() {
   }
 
   searchMovies() {
+    this.hasSearched = true;
+
     if (!this.searchText) {
       return;
     }
@@ -26,6 +29,10 @@ export class MoviesListComponent implements OnInit {
     this.logicService.search(this.searchText).subscribe((response) => {
       this.$movies = response.results;
     });
+  }
+
+  getCurrentMovies() {
+    return true;
   }
 
   clearSearch() {
