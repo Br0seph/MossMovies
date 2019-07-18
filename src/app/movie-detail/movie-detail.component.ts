@@ -7,7 +7,7 @@ import { Movie } from '../models/movie.model';
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
-  styleUrls: ['./movie-detail.component.sass']
+  styleUrls: ['./movie-detail.component.scss']
 })
 export class MovieDetailComponent implements OnInit {
 
@@ -21,7 +21,6 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     this.$movieId = this.route.snapshot.paramMap.get('movieId');
-    debugger;
 
     this.logicService.getMovie(this.$movieId).subscribe((response) => {
       this.$movie = response;

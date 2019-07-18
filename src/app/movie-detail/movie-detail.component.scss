@@ -1,0 +1,17 @@
+.header-image {
+  background-image: url("https://www.themoviedb.org/assets/2/v4/logos/primary-green-d70eebe18a5eb5b166d5c1ef0796715b8d1a2cbc698f96d311d62f894ae87085.svg");
+  background-size: cover;
+}
+
+.movie-card {
+  height: 800px;
+}
+
+#movie_detail-image {
+  margin: 10px;
+  margin-top: 0;
+  width: calc(20%);
+  min-width: 50px;
+  max-width: 150px;
+  float: right;
+}

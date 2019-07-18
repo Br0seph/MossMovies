@@ -1,5 +1,20 @@
-<p>{{$movieId}}</p>
+<button mat-button routerLink="/movies">
+  <mat-icon>arrow_back</mat-icon>
+</button>
 
 <ng-container *ngIf="$movie">
-  we got a movie here
+  <mat-card class="movie-card">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title>{{$movie.title}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <img id="movie_detail-image" mat-card-image src="http://image.tmdb.org/t/p/w185//{{$movie.poster_path}}" alt="Movie icon">
+
+      <p id="movie_detail-overview">
+        {{$movie.overview}}
+      </p>
+    </mat-card-content>
+  </mat-card>
 </ng-container>
