@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LogicService } from '../services/logic.service';
 import { Observable } from 'rxjs';
-import { Movie } from '../models/movie.model';
+import { LogicService } from 'src/services/logic.service';
+import { Movie } from 'src/models/movie.model';
 
 @Component({
   selector: 'app-movie-detail',
