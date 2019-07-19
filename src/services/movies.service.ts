@@ -40,7 +40,6 @@ export class MoviesService {
         return this.http.get<any>(route)
             .pipe(
                 map(response => {
-                    debugger;
                     return response;
                 }),
                 catchError(error => {

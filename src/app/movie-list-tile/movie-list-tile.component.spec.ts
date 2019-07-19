@@ -22,4 +22,9 @@ describe('MovieListTileComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('says hello', () => {
+    expect(this.movieBrief('hello!', 5))
+        .toEqual('hello');
+  });
 });
