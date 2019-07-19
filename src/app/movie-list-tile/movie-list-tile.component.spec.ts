@@ -24,6 +24,7 @@ describe('MovieListTileComponent', () => {
     fixture = TestBed.createComponent(MovieListTileComponent);
     component = fixture.componentInstance;
     component.movie = new Movie();
+
     fixture.detectChanges();
   });
 
