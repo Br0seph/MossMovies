@@ -14,6 +14,8 @@ export class MoviesService {
     baseRoute: string;
     apiKey: string;
 
+    // injecting the env values is useful if you're producing multiple modules, sharing the same values,
+    // rather than just import env ts files.
     constructor(
         private http: HttpClient,
         @Inject('BaseRoute') baseRoute: string,
