@@ -27,6 +27,10 @@ export class MovieListTileComponent implements OnInit {
 
   movieBrief(overview: string, maxLength: number): string {
 
+    if (!overview) {
+      return null;
+    }
+
     if (!maxLength) {
       maxLength = 100;
     }

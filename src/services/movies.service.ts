@@ -14,7 +14,6 @@ export class MoviesService {
     baseRoute: string;
     apiKey: string;
 
-    // TODO: Should put this in environment.ts files so it's possible to run difference endpoints/apikeys. But... time.
     constructor(
         private http: HttpClient,
         @Inject('BaseRoute') baseRoute: string,
@@ -28,7 +27,7 @@ export class MoviesService {
     searchMovies(searchTerm: string): Observable<MovieSearchResponse> {
         const route = this.baseRoute + '3/search/movie' + this.apiKey + '&query=' + encodeURI(searchTerm);
 
-        return this.http.get<any>(route)
+        return this.http.get<MovieSearchResponse>(route)
             .pipe(
                 map(response => {
                     return response;
@@ -43,7 +42,7 @@ export class MoviesService {
     getCurrentMovies(): Observable<MovieSearchResponse> {
         const route = this.baseRoute + '3/movie/now_playing' + this.apiKey;
 
-        return this.http.get<any>(route)
+        return this.http.get<MovieSearchResponse>(route)
             .pipe(
                 map(response => {
                     return response;
@@ -58,7 +57,7 @@ export class MoviesService {
     getMovie(id: string): Observable<Movie> {
         const route = this.baseRoute + '3/movie/' + id + this.apiKey;
 
-        return this.http.get<any>(route)
+        return this.http.get<Movie>(route)
             .pipe(
                 map((response: Movie) => {
                     return response;
