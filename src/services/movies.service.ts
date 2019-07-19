@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { Movie } from '../models/movie.model';
@@ -11,11 +11,17 @@ import { MovieSearchResponse } from '../models/MovieSearch.response';
 })
 export class MoviesService {
 
-    // TODO: Should put this in environment.ts files so it's possible to run difference endpoints/apikeys. But... time.
-    apiKey = '?api_key=82d8fc5e5d0be14a733eaeb4c28e23ce';
-    baseRoute = 'https://api.themoviedb.org/';
+    baseRoute: string;
+    apiKey: string;
 
-    constructor(private http: HttpClient) {
+    // TODO: Should put this in environment.ts files so it's possible to run difference endpoints/apikeys. But... time.
+    constructor(
+        private http: HttpClient,
+        @Inject('BaseRoute') baseRoute: string,
+        @Inject('ApiKey') apiKey: string
+    ) {
+        this.baseRoute = baseRoute;
+        this.apiKey = apiKey;
     }
 
     // example req: https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher

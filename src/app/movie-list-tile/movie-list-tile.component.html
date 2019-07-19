@@ -4,7 +4,7 @@
     <mat-card-title>{{movieBrief(movie.title, 10)}}</mat-card-title>
   </mat-card-header>
 
-  <img mat-card-image src="http://image.tmdb.org/t/p/w185//{{movie.poster_path}}" alt="Movie icon">
+  <img mat-card-image src="{{moviePoster(movie.poster_path)}}" alt="Movie icon">
 
   <mat-card-content>
     <p>

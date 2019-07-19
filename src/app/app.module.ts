@@ -1,3 +1,4 @@
+import { environment } from '../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -29,7 +30,10 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
     TextFieldModule,
     AppMaterialModule
   ],
-  providers: [],
+  providers: [
+    { provide: 'ApiKey', useValue: environment.apiKey },
+    { provide: 'BaseRoute', useValue: environment.baseRoute },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
