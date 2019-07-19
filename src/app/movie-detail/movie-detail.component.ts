@@ -18,6 +18,7 @@ export class MovieDetailComponent implements OnInit {
 
   $movieId: string;
   $movie: Observable<Movie>;
+  $recommendedMovies: Observable<Movie>;
 
   ngOnInit() {
     this.$movieId = this.route.snapshot.paramMap.get('movieId');
