@@ -12,13 +12,17 @@ import { MoviesListComponent } from './movies-list/movies-list.component';
 import { MovieListTileComponent } from './movie-list-tile/movie-list-tile.component';
 import { AppMaterialModule } from './app.material.module';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { MenuComponent } from './menu/menu.component';
+import { MovieSearchComponent } from './movie-search/movie-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesListComponent,
     MovieListTileComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    MenuComponent,
+    MovieSearchComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Movie } from 'src/models/movie.model';
 import { LogicService } from 'src/services/logic.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movies-list',
@@ -10,39 +11,18 @@ import { LogicService } from 'src/services/logic.service';
 })
 export class MoviesListComponent implements OnInit {
 
-  constructor(private logicService: LogicService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private logicService: LogicService
+  ) { }
 
   $movies: Observable<Movie[]>;
-  searchText: string;
-  hasSearched = false;
 
   ngOnInit() {
-  }
+    const movieListType = this.route.snapshot.paramMap.get('list');
 
-  searchMovies() {
-    this.hasSearched = true;
-
-    if (!this.searchText) {
-      return;
-    }
-
-    this.logicService.search(this.searchText).subscribe((response) => {
-      if (response && response.results.length > 0) {
-        this.$movies = response.results;
-      } else {
-        this.$movies = null;
-      }
-    });
-  }
-
-  getCurrentMovies() {
-    this.logicService.getCurrentMovies().subscribe((response) => {
+    this.logicService.getMoviesByList(movieListType).subscribe((response) => {
       this.$movies = response.results;
     });
-  }
-
-  clearSearch() {
-    this.$movies = null;
-    this.searchText = null;
   }
 }

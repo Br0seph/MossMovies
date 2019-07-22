@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { MoviesService } from './movies.service';
+import { MovieLists } from '../config/movie-lists';
 
 @Injectable({
     providedIn: 'root',
@@ -9,6 +10,18 @@ import { MoviesService } from './movies.service';
 export class LogicService {
 
     constructor(private moviesService: MoviesService) {
+    }
+
+    getMoviesByList(listType: string) {
+        const listEnum = MovieLists[listType];
+
+        switch (listEnum) {
+            case MovieLists.current:
+                return this.getCurrentMovies();
+
+            default:
+                return null;
+        }
     }
 
     // Search for movies.

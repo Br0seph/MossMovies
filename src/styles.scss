@@ -1,7 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '~material-icons/iconfont/material-icons.css';
 
 * {
     font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.app-container {
+    margin: -8px;
+    height: 100%;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    margin: -4px;
 }
