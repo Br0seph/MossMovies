@@ -3,7 +3,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { Movie } from '../models/movie.model';
-import { MovieSearchResponse } from '../models/MovieSearch.response';
+import { MovieSearchResponse } from '../models/movie-search.response';
 
 
 @Injectable({
