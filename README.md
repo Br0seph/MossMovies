@@ -15,6 +15,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+## Deployment
+
+Run `npm run deploy` to build the project with the correct base href and deploy to the gh-pages branch in GitHub. This will be served from the url `https://br0seph.github.io/MossMovies/`. In the branch settings, the content is being served from root.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
