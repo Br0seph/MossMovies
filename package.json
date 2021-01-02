@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "gh-pages -d dist/MossyMovies/"
+    "deploy": "gh-pages -d docs"
   },
   "private": true,
   "homepage": "https://Br0seph.github.io/mossy-movies",
