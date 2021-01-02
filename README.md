@@ -1,6 +1,7 @@
-# MossyMovies
+# MossMovies
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
+It can be accessed via the live environment `https://br0seph.github.io/MossMovies/`
 
 ## Development server
 
